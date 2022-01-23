@@ -1,0 +1,2 @@
+# CollegitesNg
+Collegites Angular App
