@@ -1,1 +1,17 @@
-<p>login works!</p>
+<section class="login-form">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap = "10px" #lf="ngForm" (ngSubmit)="onSubmit(lf)">
+        <mat-form-field appearance="outline">
+            <input type="text" matInput placeholder="Enrollment Number Ex: 0105AI201132" ngModel name="enroll"   required  minlength="10">
+            <mat-hint>University Roll Number</mat-hint>
+            <mat-error>Empty/Invalid</mat-error>
+            <mat-icon matPrefix >person_outline</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6" #pwInput="ngModel">
+            <mat-hint>{{pwInput.value?.length}}/6</mat-hint>
+            <mat-error>Minimum 6 length required</mat-error>
+            <mat-icon matPrefix>lock_outline</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="lf.invalid">login </button>
+    </form>
+</section>

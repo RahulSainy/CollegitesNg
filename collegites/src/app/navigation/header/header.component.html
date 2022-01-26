@@ -1,0 +1,44 @@
+
+<!-- tollbar for lg screens         -->
+
+<mat-toolbar color="primary">
+    <div class="button"  fxHide.gt-sm="">
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>widgets</mat-icon>
+        </button>
+    </div>
+
+    <div class="logo">
+        Collegites
+    </div>
+
+    <ul fxLayout fxLayoutGap="10px" class=" navigation-items">
+    <li>
+        <a routerLink="">
+            <mat-icon matPrefix>home_outline</mat-icon> Home
+        </a>
+    </li>
+
+    </ul>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end stretch" fxHide.lt-sm="">
+        <ul fxLayout fxLayoutGap="10px" class=" navigation-items">
+          
+            <li>
+                <a routerLink="/login"  >
+                    <mat-icon matPrefix>person_outline</mat-icon>Login
+                </a>
+            </li>
+            <li>
+                <a routerLink="/signup">
+                    <mat-icon matPrefix>how_to_reg</mat-icon> Signup
+                </a>
+            </li>
+            <li>
+                <a>
+                    <mat-icon matPrefix>eject</mat-icon> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</mat-toolbar>

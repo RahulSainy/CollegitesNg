@@ -1,11 +1,24 @@
 <section class="signup-form">
-    <form fxLayout="column 12" fxLayoutAlign="center center">
-          <mat-form-field appearance="outline">
-            <input type="number" matInput placeholder="Your College Enrollment">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap = "10px" #sf="ngForm" (ngSubmit)="onSubmit(sf)">
+        <mat-form-field appearance="outline">
+            <mat-hint>College Official Email</mat-hint>
+            <input  type="email" matInput placeholder="Your Email" ngModel name="email" email required>
+            <mat-icon matPrefix >mail_outline</mat-icon>
+            <mat-error>E-Mail is Invalid</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <input type="password" matInput placeholder="Your password">
+            <input type="text" matInput placeholder="Enrollment Number Ex: 0105AI201132" ngModel name="enroll"   required  minlength="10">
+            <mat-hint>University Roll Number</mat-hint>
+            <mat-error>Empty/Invalid</mat-error>
+            <mat-icon matPrefix >person_outline</mat-icon>
         </mat-form-field>
-        <button mat-raised-button> submmit </button>
+        <mat-form-field appearance="outline">
+            <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6" #pwInput="ngModel">
+            <mat-hint>{{pwInput.value?.length}}/6</mat-hint>
+            <mat-error>Minimum 6 length required</mat-error>
+            <mat-icon matPrefix>lock_outline</mat-icon>
+        </mat-form-field>
+          <mat-checkbox required ngModel name="agree">Agree To Terms And Conditions <a href ="_blank">Read Here</a></mat-checkbox>
+        <button mat-raised-button color="primary" [disabled]="sf.invalid"> submmit </button>
     </form>
 </section>
