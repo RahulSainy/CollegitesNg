@@ -1,0 +1,85 @@
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+  transition: color 150ms;
+  color: #95a5a6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7f8c8d;
+  text-decoration: underline;
+}
+
+.contain {
+  width: 100%;
+}
+
+.row {
+  /* overflow: scroll; */
+  overflow: auto;
+  overflow-y: hidden;
+  width: 100%;
+  
+}
+
+.row__inner {
+  transition: 450ms transform;
+  font-size: 0;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.row__inner:hover {
+    transform: translate3d(-62.5px, 0, 0);
+  }
+  
+  .row__inner:hover .tile {
+    opacity: 0.3;
+  }
+  
+  .row__inner:hover .tile:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+.tile {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+}
+
+.tile__img {
+  width: 250px;
+  height: 140.625px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.tile:hover .tile__details {
+  opacity: 1;
+}
+
+
+.tile:hover~.tile {
+  transform: translate3d(125px, 0, 0);
+}
+.footer-card {
+  position: relative;
+  display: inline-block;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* copy */
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
