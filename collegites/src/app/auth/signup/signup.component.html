@@ -1,24 +1,48 @@
 <section class="signup-form">
-    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap = "10px" #sf="ngForm" (ngSubmit)="onSubmit(sf)">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #sf="ngForm" (ngSubmit)="onSubmit(sf)">
         <mat-form-field appearance="outline">
             <mat-hint>College Official Email</mat-hint>
-            <input  type="email" matInput placeholder="Your Email" ngModel name="email" email required>
-            <mat-icon matPrefix >mail_outline</mat-icon>
+            <input type="email" matInput placeholder="Your Email" ngModel name="email" email required>
+            <mat-icon matPrefix>mail_outline</mat-icon>
             <mat-error>E-Mail is Invalid</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <input type="text" matInput placeholder="Enrollment Number Ex: 0105AI201132" ngModel name="enroll"   required  minlength="10">
+            <input type="text" matInput placeholder="Enrollment Number Ex: 0105AI201132" ngModel name="enroll" required
+                minlength="10">
             <mat-hint>University Roll Number</mat-hint>
             <mat-error>Empty/Invalid</mat-error>
-            <mat-icon matPrefix >person_outline</mat-icon>
+            <mat-icon matPrefix>person_outline</mat-icon>
         </mat-form-field>
+
         <mat-form-field appearance="outline">
-            <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6" #pwInput="ngModel">
+            <mat-label>Your Branch</mat-label>
+            <mat-hint>Btech Branch</mat-hint>
+            <mat-select type="text" matInput ngModel name="branch" required>
+                <mat-option *ngFor="let branch of branchs" [value]="branch.value">
+                    {{branch.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Your Semester</mat-label>
+            <mat-hint>Current Year Semester</mat-hint>
+            <mat-select type="text" matInput ngModel name="semester" required>
+                <mat-option *ngFor="let sem of sems" [value]="sem.value">
+                    {{sem.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6"
+                #pwInput="ngModel">
             <mat-hint>{{pwInput.value?.length}}/6</mat-hint>
             <mat-error>Minimum 6 length required</mat-error>
             <mat-icon matPrefix>lock_outline</mat-icon>
         </mat-form-field>
-          <mat-checkbox required ngModel name="agree">Agree To Terms And Conditions <a href ="_blank">Read Here</a></mat-checkbox>
+        <mat-checkbox required ngModel name="terms-agree">Agree To Terms And Conditions <a href="_blank">Read Here</a>
+        </mat-checkbox>
         <button mat-raised-button color="primary" [disabled]="sf.invalid"> submmit </button>
     </form>
 </section>

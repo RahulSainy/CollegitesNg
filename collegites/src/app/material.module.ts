@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
     imports: [
         MatButtonModule,
@@ -21,6 +22,7 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatListModule,
         MatCardModule,
         MatDialogModule,
+        MatSelectModule,
 
     ],
     exports: [MatButtonModule,
@@ -33,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatListModule,
         MatCardModule,
         MatDialogModule,
+        MatSelectModule,
     ]
 })
 export class MateririalModule {}
