@@ -53,6 +53,7 @@ a:hover {
   cursor: pointer;
   transition: 450ms all;
   transform-origin: center left;
+  background-color: whitesmoke;
 }
 
 .tile__img {
@@ -78,8 +79,6 @@ a:hover {
   cursor: pointer;
 }
 
-/* copy */
-.example-button-row {
-  display: table-cell;
-  width: 490px;
-}
+
+
+/* footer */
