@@ -18,3 +18,8 @@ a{
 a:hover,a:active{
     color: lightgrey;
 }
+
+.header-image {
+    background-image: url('https://i.ibb.co/YcR1C3W/collegites-Logo.gif');
+    background-size: cover;
+  }
