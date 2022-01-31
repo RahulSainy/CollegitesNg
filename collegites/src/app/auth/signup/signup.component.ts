@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../aut.service';
+import { TermsComponent } from '../terms.component';
 
 interface Branch {
   value: string;
@@ -41,12 +44,22 @@ export class SignupComponent implements OnInit {
     {value: '7th', viewValue: '7th'},
     {value: '8th', viewValue: '8th'},
   ];
-  constructor() { }
+
+  constructor(private dialog:MatDialog,
+    private authService :AuthService) { }
 
   ngOnInit(): void {
     
   }
   onSubmit(form : NgForm){
     console.log(form);
+    this.authService.registerUser({
+      email : form.value.email,
+      password: form.value.password
+
+    })
+  }
+  onAgree(){
+    this.dialog.open(TermsComponent);
   }
 }

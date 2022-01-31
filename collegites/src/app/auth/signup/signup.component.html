@@ -41,7 +41,8 @@
             <mat-error>Minimum 6 length required</mat-error>
             <mat-icon matPrefix>lock_outline</mat-icon>
         </mat-form-field>
-        <mat-checkbox required ngModel name="terms-agree">Agree To Terms And Conditions <a href="_blank">Read Here</a>
+        <mat-checkbox required ngModel name="terms-agree">Agree To Terms And Conditions <a style="color: red;" (click)="onAgree()"
+           >Read Here</a>
         </mat-checkbox>
         <button mat-raised-button color="primary" [disabled]="sf.invalid"> submmit </button>
     </form>

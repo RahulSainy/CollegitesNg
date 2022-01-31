@@ -14,6 +14,11 @@ import { FormsModule} from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { SubjectComponent } from './learning/subject/subject.component';
+import { TopicComponent } from './learning/topic/topic.component';
+import { NotesComponent } from './learning/topic/notes/notes.component';
+import { TermsComponent } from './auth/terms.component';
+import { AuthService } from './auth/aut.service';
 
 
 @NgModule({
@@ -24,7 +29,11 @@ import { FooterComponent } from './navigation/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     SidenavListComponent,
-    FooterComponent
+    FooterComponent,
+    SubjectComponent,
+    TopicComponent,
+    NotesComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,8 @@ import { FooterComponent } from './navigation/footer/footer.component';
     FlexLayoutModule,
     FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService],
+  bootstrap: [AppComponent],
+  entryComponents:[TermsComponent]
 })
 export class AppModule {}
