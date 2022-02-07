@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthService } from '../aut.service';
+import { Subscription } from 'rxjs';
+import { UIservice } from 'src/app/Shared/ui.service';
+import { AuthService } from '../auth.service';
 import { TermsComponent } from '../terms.component';
 
 interface Branch {
@@ -19,7 +21,11 @@ interface Sems {
 })
 
 
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit , OnDestroy {
+isloading = false;
+  private loadingSubs: Subscription;
+
+
   branchs: Branch[] = [
     {value: 'AU', viewValue: 'AU'},
     {value: 'CE', viewValue: 'CE'},
@@ -46,7 +52,8 @@ export class SignupComponent implements OnInit {
   ];
 
   constructor(private dialog:MatDialog,
-    private authService :AuthService) { }
+    private authService :AuthService, private uiService: UIservice,
+   ) { }
 
   ngOnInit(): void {
     
@@ -61,5 +68,15 @@ export class SignupComponent implements OnInit {
   }
   onAgree(){
     this.dialog.open(TermsComponent);
+    this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
+      this.isloading = isLoading;
+    })
+  }
+
+  ngOnDestroy(): void {
+    if (this.loadingSubs){
+
+      this.loadingSubs.unsubscribe();
+    }
   }
 }

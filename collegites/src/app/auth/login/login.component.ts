@@ -1,23 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { AuthService } from '../aut.service';
+import { Component, OnDestroy, OnInit } from '@angular/core'
+import { NgForm } from '@angular/forms'
+import { Subscription } from 'rxjs';
+import { UIservice } from 'src/app/Shared/ui.service'
+import { AuthService } from '../auth.service'
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-
-  constructor(private authService : AuthService) { }
+export class LoginComponent implements OnInit ,OnDestroy{
+  private loadingSubs!: Subscription;
+  isloading = false;
+ 
+  constructor(private authService: AuthService,private uiService:UIservice) {}
 
   ngOnInit(): void {
-  }
-  onSubmit(form : NgForm){
-    console.log(form);
-    this.authService.login({
-email: form.value.login,
-password: form.value.password
+    this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
+      this.isloading = isLoading;
     });
+  }
+  onSubmit(form: NgForm) {
+    console.log(form)
+    this.authService.login({
+      email: form.value.email,
+      password: form.value.password,
+    })
+  }
+  ngOnDestroy(): void {
+    if (this.loadingSubs){
+
+      this.loadingSubs.unsubscribe();
+    }
   }
 }
