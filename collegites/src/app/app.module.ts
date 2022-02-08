@@ -22,7 +22,11 @@ import { AuthService } from './auth/auth.service'
 import { environment } from 'src/environments/environment'
 import { UIservice } from './Shared/ui.service'
 import { AuthModule } from './auth/auth.model'
-import { SharedModule } from './Shared/shared.module'
+import { SharedModule } from './Shared/shared.module';
+import { AboutComponent } from './other-components/about/about.component'
+import { ContactComponent } from './other-components/contact/contact.component';
+import { ChatComponent } from './other-components/chat/chat.component'
+
 
 @NgModule({
   declarations: [
@@ -35,6 +39,9 @@ import { SharedModule } from './Shared/shared.module'
     TopicComponent,
     NotesComponent,
     TermsComponent,
+AboutComponent,
+ContactComponent,
+ChatComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<mat-card style="background: #dddddd5c">
+    <mat-card-title>
+       Contact Us for Queries
+    </mat-card-title>
+<section >
+    <form fxLayout="column" fxLayoutGap="10px"fxLayoutAlign="center strech" #cf="ngForm" (ngSubmit)="onSubmit(cf)">
+        <mat-form-field appearance="outline">
+            <input type="email" matInput placeholder="Your Email" ngModel name="email" email required>
+            <mat-icon matPrefix>mail_outline</mat-icon>
+            <mat-error>E-Mail is Invalid</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Leave a Message</mat-label>
+            <textarea style="height:100px" matInput placeholder="Your Message" ngModel name="message" required></textarea>
+        </mat-form-field>
+    </form>
+
+</section>
+</mat-card>

@@ -5,9 +5,24 @@
      <a *ngIf="!isAuth" mat-list-item routerLink="/signup">
          <mat-icon matPrefix>how_to_reg</mat-icon> <span class="nav-caption"> Signup</span> 
      </a>
-<a *ngIf="!isAuth" mat-list-item routerLink="">
+<a  mat-list-item routerLink="">
      <mat-icon matPrefix>cottage</mat-icon><span class="nav-caption">Home</span> 
  </a>
+ <a *ngIf="isAuth" mat-list-item routerLink="learning/subject">
+    <mat-icon matPrefix>auto_stories</mat-icon><span class="nav-caption">Subject</span> 
+</a>
+<a *ngIf="isAuth" mat-list-item routerLink="learning/subject/topic">
+    <mat-icon matPrefix>menu_book</mat-icon><span class="nav-caption">Topic</span> 
+</a>
+ <a  mat-list-item routerLink="about">
+    <mat-icon matPrefix>groups</mat-icon><span class="nav-caption">About Us</span> 
+</a>
+<a  mat-list-item routerLink="contact">
+    <mat-icon matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span> 
+</a>
+<a  mat-list-item routerLink="contact">
+    <mat-icon matPrefix>forum</mat-icon><span class="nav-caption">Chat</span> 
+</a>
  <mat-list-item *ngIf="isAuth">
      <button mat-icon-button (click)="onLogout()" ><mat-icon>eject</mat-icon><span>Logout</span></button>
  </mat-list-item>
