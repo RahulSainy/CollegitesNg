@@ -25,3 +25,9 @@ a:hover,a:active{
     background-size: cover;
     
   }
+  .shop{
+    background: #ffdb3c;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

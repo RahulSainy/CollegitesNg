@@ -1,12 +1,8 @@
-<section class="signup-form" >
-    <form fxLayout="column" 
-    fxLayoutAlign="center center"
-    fxLayoutGap="10px" #sf="ngForm"
-     (ngSubmit)="onSubmit(sf)">
+<section class="signup-form">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #sf="ngForm" (ngSubmit)="onSubmit(sf)">
         <mat-form-field appearance="outline">
             <mat-hint>College Official Email</mat-hint>
-            <input type="email" matInput placeholder="Your Email" 
-            ngModel name="email" email required>
+            <input type="email" matInput placeholder="Your Email" ngModel name="email" email required>
             <mat-icon matPrefix>mail_outline</mat-icon>
             <mat-error>E-Mail is Invalid</mat-error>
         </mat-form-field>

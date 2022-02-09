@@ -25,7 +25,9 @@ import { AuthModule } from './auth/auth.model'
 import { SharedModule } from './Shared/shared.module';
 import { AboutComponent } from './other-components/about/about.component'
 import { ContactComponent } from './other-components/contact/contact.component';
-import { ChatComponent } from './other-components/chat/chat.component'
+import { ChatComponent } from './other-components/chat/chat.component';
+import { CartComponent } from './Ecommerce/cart/cart.component';
+import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { ChatComponent } from './other-components/chat/chat.component'
 AboutComponent,
 ContactComponent,
 ChatComponent,
+CartComponent,
+EcommerceHomeComponent,
   ],
   imports: [
     BrowserModule,

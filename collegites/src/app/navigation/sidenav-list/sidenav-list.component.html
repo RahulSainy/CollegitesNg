@@ -1,29 +1,47 @@
 <mat-nav-list>
-    <a *ngIf="!isAuth" mat-list-item routerLink="/login">
-         <mat-icon matPrefix>person</mat-icon><span class="nav-caption">Login</span> 
-     </a>
-     <a *ngIf="!isAuth" mat-list-item routerLink="/signup">
-         <mat-icon matPrefix>how_to_reg</mat-icon> <span class="nav-caption"> Signup</span> 
-     </a>
-<a  mat-list-item routerLink="">
-     <mat-icon matPrefix>cottage</mat-icon><span class="nav-caption">Home</span> 
- </a>
- <a *ngIf="isAuth" mat-list-item routerLink="learning/subject">
-    <mat-icon matPrefix>auto_stories</mat-icon><span class="nav-caption">Subject</span> 
-</a>
-<a *ngIf="isAuth" mat-list-item routerLink="learning/subject/topic">
-    <mat-icon matPrefix>menu_book</mat-icon><span class="nav-caption">Topic</span> 
-</a>
- <a  mat-list-item routerLink="about">
-    <mat-icon matPrefix>groups</mat-icon><span class="nav-caption">About Us</span> 
-</a>
-<a  mat-list-item routerLink="contact">
-    <mat-icon matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span> 
-</a>
-<a  mat-list-item routerLink="contact">
-    <mat-icon matPrefix>forum</mat-icon><span class="nav-caption">Chat</span> 
-</a>
- <mat-list-item *ngIf="isAuth">
-     <button mat-icon-button (click)="onLogout()" ><mat-icon>eject</mat-icon><span>Logout</span></button>
- </mat-list-item>
+    <a href="https://blackrindustries.weebly.com/">
+        <section fxLayoutAlign="space-evenly center" fxLayout="row">
+            <img mat-card-sm-image style="border-radius: 10px;"
+                src="https://blackrindustries.weebly.com/uploads/1/3/0/0/130053233/images.jpg" alt="BlackR logo">
+            <img mat-card-sm-image style="border-radius: 10px;" src="   https://i.ibb.co/YcR1C3W/collegites-Logo.gif"
+                alt="BlackR logo">
+            <br>
+        </section>
+        <p> Collegites - BlackR Inititative</p>
+    </a>
+  
+    <mat-list-item *ngIf="!isAuth" mat-list-item routerLink="/login">
+        <mat-icon matPrefix>person</mat-icon><span class="nav-caption">Login</span>
+    </mat-list-item>
+    <mat-list-item *ngIf="!isAuth" mat-list-item routerLink="/signup">
+        <mat-icon matPrefix>how_to_reg</mat-icon> <span class="nav-caption"> Signup</span>
+    </mat-list-item>
+  
+    <mat-list-item mat-list-item routerLink="">
+        <mat-icon matPrefix>cottage</mat-icon><span class="nav-caption">Home</span>
+    </mat-list-item>
+    
+    <mat-list-item *ngIf="isAuth" mat-list-item routerLink="learning/subject">
+        <mat-icon matPrefix>auto_stories</mat-icon><span class="nav-caption">Subject</span>
+    </mat-list-item>
+    <mat-list-item *ngIf="isAuth" mat-list-item routerLink="learning/subject/topic">
+        <mat-icon matPrefix>menu_book</mat-icon><span class="nav-caption">Topic</span>
+    </mat-list-item>
+    <mat-list-item mat-list-item routerLink="about">
+        <mat-icon matPrefix>groups</mat-icon><span class="nav-caption">About Us</span>
+    </mat-list-item>
+    <mat-list-item mat-list-item routerLink="contact">
+        <mat-icon matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span>
+    </mat-list-item>
+    <mat-list-item mat-list-item routerLink="chat">
+        <mat-icon matPrefix>forum</mat-icon><span class="nav-caption">Chat</span>
+    </mat-list-item>
+    <mat-list-item mat-list-item routerLink="shop">
+        <mat-icon class="shop-icon" matPrefix>local_mall</mat-icon><span class="nav-caption">Shop</span>
+    </mat-list-item>
+    <mat-list-item *ngIf="isAuth">
+        <button mat-icon-button (click)="onLogout()">
+            <mat-icon>eject</mat-icon><span>Logout</span>
+        </button>
+    </mat-list-item>
 </mat-nav-list>

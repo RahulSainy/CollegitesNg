@@ -1,1 +1,40 @@
-<p>chat works!</p>
+<section>
+
+    <h1>Anonynus Chat</h1>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>New Post</mat-card-title>
+        </mat-card-header>
+       
+        <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech" #cf="ngForm" (ngSubmit)="onSubmit(cf)">
+            <mat-form-field appearance="outline">
+                <mat-label><mat-icon>chat_bubble_outline</mat-icon> Enter a Message</mat-label>
+                <textarea style="height:100px" matInput placeholder="Your Message" ngModel name="message"
+                    required></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label> <mat-icon>list</mat-icon>Choose topic</mat-label>
+                <mat-select  type="text" matInput ngModel name="topic" required>
+                    <mat-option value="Confession">Confession</mat-option>
+                    <mat-option value="marketing">Martketing</mat-option>
+                    <mat-option value="marketing">Meme</mat-option>
+                    <mat-option value="marketing">other</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+        <mat-card-actions fxLayoutAlign="space-around " >
+            <button style="width: 200px;" color="warn" mat-raised-button>Discard</button>
+            <button  style="width: 200px;" color="primary" mat-raised-button>Post</button>
+        </mat-card-actions>
+    </mat-card>
+    <br>
+    <mat-card>
+        <mat-card-title>Actions Buttons</mat-card-title>
+        <mat-card-subtitle>Topic</mat-card-subtitle>
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+    <br>
+</section>

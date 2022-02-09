@@ -1,6 +1,4 @@
-mat-nav-list{
-    width: 150px;
-}
+
 a{
     text-decoration: none;
     color: white;
@@ -10,6 +8,12 @@ a:hover,a:active{
 }
 .material-icons {
     background: #2196f3;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.shop-icon{
+    background: #f3aa21;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
