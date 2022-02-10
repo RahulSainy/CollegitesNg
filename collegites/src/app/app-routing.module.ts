@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component'
 import { SubjectComponent } from './learning/subject/subject.component'
 import { TopicComponent } from './learning/topic/topic.component'
 import { AboutComponent } from './other-components/about/about.component'
+import { BlogComponent } from './other-components/blog/blog.component'
 import { ChatComponent } from './other-components/chat/chat.component'
 import { ContactComponent } from './other-components/contact/contact.component'
 
@@ -15,8 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'shop', component: EcommerceHomeComponent },
-
-
+  { path: 'blog', component: BlogComponent },
   {
     path: 'learning/subject',
     component: SubjectComponent,

@@ -27,7 +27,8 @@ import { AboutComponent } from './other-components/about/about.component'
 import { ContactComponent } from './other-components/contact/contact.component';
 import { ChatComponent } from './other-components/chat/chat.component';
 import { CartComponent } from './Ecommerce/cart/cart.component';
-import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
+import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component';
+import { BlogComponent } from './other-components/blog/blog.component'
 
 
 @NgModule({
@@ -46,6 +47,7 @@ ContactComponent,
 ChatComponent,
 CartComponent,
 EcommerceHomeComponent,
+BlogComponent,
   ],
   imports: [
     BrowserModule,
