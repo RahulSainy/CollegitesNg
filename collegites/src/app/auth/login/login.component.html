@@ -1,5 +1,5 @@
 <section class="login-form">
-    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap = "10px" #lf="ngForm" (ngSubmit)="onSubmit(lf)">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #lf="ngForm" (ngSubmit)="onSubmit(lf)">
         <mat-form-field appearance="outline">
             <mat-hint>College Official Email</mat-hint>
             <input type="email" matInput placeholder="Your Email" ngModel name="email" email required>
@@ -7,12 +7,18 @@
             <mat-error>E-Mail is Invalid</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6" #pwInput="ngModel">
+            <input type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6"
+                #pwInput="ngModel">
             <mat-hint>{{pwInput.value?.length}}/6</mat-hint>
             <mat-error>Minimum 6 length required</mat-error>
             <mat-icon matPrefix>lock_outline</mat-icon>
         </mat-form-field>
-        <button *ngIf="!isloading" mat-raised-button color="primary" [disabled]="lf.invalid">login </button>
-    <mat-spinner *ngIf="isloading"></mat-spinner>
+        <button *ngIf="!isLoading" mat-raised-button color="primary" [disabled]="lf.invalid">login </button>
+        <div fxLayout="column" fxLayoutAlign="center center" *ngIf="isLoading">
+           
+            <img src="https://i.ibb.co/H4zQS1h/1481.gif" alt="">
+            <h1>Loading....</h1>
+        </div>
+
     </form>
 </section>

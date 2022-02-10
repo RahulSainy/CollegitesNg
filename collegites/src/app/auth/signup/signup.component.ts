@@ -22,7 +22,7 @@ interface Sems {
 
 
 export class SignupComponent implements OnInit , OnDestroy {
-isloading = false;
+isLoading = false;
   private loadingSubs: Subscription;
 
 
@@ -69,7 +69,7 @@ isloading = false;
   onAgree(){
     this.dialog.open(TermsComponent);
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
-      this.isloading = isLoading;
+      this.isLoading = isLoading;
     })
   }
 

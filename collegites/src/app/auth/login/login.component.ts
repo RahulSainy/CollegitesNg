@@ -11,13 +11,13 @@ import { AuthService } from '../auth.service'
 })
 export class LoginComponent implements OnInit ,OnDestroy{
   private loadingSubs!: Subscription;
-  isloading = false;
+  isLoading = false;
  
   constructor(private authService: AuthService,private uiService:UIservice) {}
 
   ngOnInit(): void {
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
-      this.isloading = isLoading;
+      this.isLoading = isLoading;
     });
   }
   onSubmit(form: NgForm) {

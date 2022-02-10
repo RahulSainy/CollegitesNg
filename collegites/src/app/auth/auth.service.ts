@@ -37,8 +37,22 @@ export class AuthService {
         this.authSuccesfully()
       })
       .catch((error) => {
-        this.uiService.showSnackBar(error.message,'X', 5000);
-      });
+        switch (error.code) {
+          case "auth/invalid-email":
+          case "auth/wrong-password":
+          case "auth/user-not-found":
+            {
+              this.uiService.showSnackBar("Wrong email address or password.",'X', 5000);
+              break;
+            }
+          case "auth/user-disabled":
+          case "user-disabled":
+            {
+              this.uiService.showSnackBar("This account is disabled",'X', 5000);
+              break;
+            }
+          }
+      })
   }
   logout() {
     this.isAuthenticated = false

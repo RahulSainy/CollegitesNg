@@ -1,4 +1,10 @@
-<div style="--aspect-ratio: 16/9;  height: 1000px;">
-    <iframe scrolling="no"  src="https://collegitesblog.blogspot.com/" width="1600" height="100%" frameborder="0">
+<div fxLayout="row" fxLayoutAlign="center" style="--aspect-ratio: 16/9;  height: 500vh;">
+    <iframe  (load)="isLoading=false" scrolling="no"  src="https://collegitesblog.blogspot.com/" width="1600" height="100%" frameborder="0">
     </iframe>
+    
+    <div  style="margin-top: 15%;" *ngIf="isLoading">
+        <img src="https://i.ibb.co/H4zQS1h/1481.gif" alt="">
+        <h1>Loading....</h1>
+    </div>
+   
 </div>

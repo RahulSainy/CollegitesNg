@@ -99,7 +99,7 @@ li {
 /* Mobile Styles */
 @media screen and (max-width: 770px) {
   .list-members {
-    width: auto;
+    width: 92%;
   }
   .member {
     flex-basis: 100%;
