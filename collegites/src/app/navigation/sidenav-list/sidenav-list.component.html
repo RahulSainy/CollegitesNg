@@ -7,20 +7,20 @@
                 alt="BlackR logo">
             <br>
         </section>
-        <p> Collegites - BlackR Inititative</p>
+        <p> BlackR Inititative - Collegites </p>
     </a>
-  
+
     <mat-list-item *ngIf="!isAuth" mat-list-item routerLink="/login">
         <mat-icon matPrefix>person</mat-icon><span class="nav-caption">Login</span>
     </mat-list-item>
     <mat-list-item *ngIf="!isAuth" mat-list-item routerLink="/signup">
         <mat-icon matPrefix>how_to_reg</mat-icon> <span class="nav-caption"> Signup</span>
     </mat-list-item>
-  
+
     <mat-list-item mat-list-item routerLink="">
         <mat-icon matPrefix>cottage</mat-icon><span class="nav-caption">Home</span>
     </mat-list-item>
-    
+
     <mat-list-item *ngIf="isAuth" mat-list-item routerLink="learning/subject">
         <mat-icon matPrefix>auto_stories</mat-icon><span class="nav-caption">Subject</span>
     </mat-list-item>
