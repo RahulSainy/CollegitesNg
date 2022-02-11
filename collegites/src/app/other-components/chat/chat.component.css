@@ -1,0 +1,20 @@
+img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  align-self: center;
+}
+.tab-card {
+  margin: 10px;
+  background: #dddddd5c;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: stretch;
+  width: 90%;
+}
+button{
+    height: 50px;
+}
