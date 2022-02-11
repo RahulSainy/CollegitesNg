@@ -1,12 +1,13 @@
 <section>
 
-    <h1>Anonynus Chat</h1>
+    <h1 style=" text-align: center;">Anonynus Chat</h1>
     <mat-card>
         <mat-card-header>
             <mat-card-title>New Post</mat-card-title>
         </mat-card-header>
 
         <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech" #cf="ngForm" (ngSubmit)="onSubmit(cf)">
+
             <mat-form-field appearance="outline">
                 <mat-label>
                     <mat-icon>chat_bubble_outline</mat-icon> Enter a Message
@@ -14,7 +15,17 @@
                 <textarea style="height:100px" matInput placeholder="Your Message" ngModel name="message"
                     required></textarea>
             </mat-form-field>
-
+            <mat-form-field appearance="outline">
+                <mat-label>
+                    <mat-icon>list</mat-icon>Choose topic
+                </mat-label>
+                <mat-select type="text" matInput ngModel name="topic" required>
+                    <mat-option value="Confession">Confession</mat-option>
+                    <mat-option value="marketing">Martketing</mat-option>
+                    <mat-option value="marketing">Meme</mat-option>
+                    <mat-option value="marketing">other</mat-option>
+                </mat-select>
+            </mat-form-field>
             <div style="text-align:center">
                 <input #fileInput hidden="true" type="file" onclick="this.value=null"
                     (change)="fileInputChange($event)" />
@@ -27,17 +38,7 @@
 
             </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>
-                    <mat-icon>list</mat-icon>Choose topic
-                </mat-label>
-                <mat-select type="text" matInput ngModel name="topic" required>
-                    <mat-option value="Confession">Confession</mat-option>
-                    <mat-option value="marketing">Martketing</mat-option>
-                    <mat-option value="marketing">Meme</mat-option>
-                    <mat-option value="marketing">other</mat-option>
-                </mat-select>
-            </mat-form-field>
+
         </form>
         <mat-card-actions fxLayoutAlign="space-around ">
             <button style="width: 200px;" color="warn" mat-raised-button>Discard</button>
@@ -49,85 +50,143 @@
     <br>
 
 
-    <mat-tab-group  mat-stretch-tabs backgroundColor="primary">
+    <mat-tab-group mat-stretch-tabs backgroundColor="primary">
 
-            <mat-tab label="All">
-                <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
-                    <mat-card class="post-card">
-                        <mat-card-title>{{post.title}}</mat-card-title>
-                        <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
-                        <img mat-card-image [src]="post.img" alt="">
-                        <mat-card-actions fxLayoutAlign="space-around ">
-                            <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
-                            <button  color="accent" mat-fab> <mat-icon>favorite</mat-icon></button>
-                            <button  color="accent" mat-fab> <mat-icon>thumb_up</mat-icon></button>
-                            <button mat-fab><img src="https://img.icons8.com/fluency/48/000000/applause.png"/></button>
-
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
-            <br>
-        </mat-tab>
-        <mat-tab label="Confession">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
-
+        <mat-tab label="All">
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
                     <mat-card-title>{{post.title}}</mat-card-title>
                     <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
-                    <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE <mat-icon>favorite</mat-icon></button>
+                    <mat-card-actions fxLayoutAlign="space-evenly ">
+                        <button style="background-color: #ff9c00;" mat-fab>
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_up</mat-icon>
+                        </button>
+                        <button color="warn" mat-fab>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_down</mat-icon>
+                        </button>
+                        <button mat-fab style="background-color: gold;">
+                            <mat-icon>local_fire_department</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <br>
+        </mat-tab>
+        <mat-tab label="Confession">
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
+                <mat-card class="post-card">
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <img mat-card-image [src]="post.img" alt="">
+                    <mat-card-actions fxLayoutAlign="space-evenly ">
+                        <button style="background-color: #ff9c00;" mat-fab>
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_up</mat-icon>
+                        </button>
+                        <button color="warn" mat-fab>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_down</mat-icon>
+                        </button>
+                        <button mat-fab style="background-color: gold;">
+                            <mat-icon>local_fire_department</mat-icon>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
         <mat-tab label="Marketing">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
-
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
                     <mat-card-title>{{post.title}}</mat-card-title>
                     <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
-                    <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
-                        <button style="width: 100%;" color="accent" mat-raised-button> LIKE <mat-icon>favorite</mat-icon></button>
+                    <mat-card-actions fxLayoutAlign="space-evenly ">
+                        <button style="background-color: #ff9c00;" mat-fab>
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_up</mat-icon>
+                        </button>
+                        <button color="warn" mat-fab>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_down</mat-icon>
+                        </button>
+                        <button mat-fab style="background-color: gold;">
+                            <mat-icon>local_fire_department</mat-icon>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
         <mat-tab label="Meme">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
-
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
                     <mat-card-title>{{post.title}}</mat-card-title>
                     <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
-                    <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE <mat-icon>favorite</mat-icon></button>
+                    <mat-card-actions fxLayoutAlign="space-evenly ">
+                        <button style="background-color: #ff9c00;" mat-fab>
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_up</mat-icon>
+                        </button>
+                        <button color="warn" mat-fab>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_down</mat-icon>
+                        </button>
+                        <button mat-fab style="background-color: gold;">
+                            <mat-icon>local_fire_department</mat-icon>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
         <mat-tab label="Other">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
-
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
                     <mat-card-title>{{post.title}}</mat-card-title>
                     <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
-                    <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE <mat-icon>favorite</mat-icon></button>
+                    <mat-card-actions fxLayoutAlign="space-evenly ">
+                        <button style="background-color: #ff9c00;" mat-fab>
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_up</mat-icon>
+                        </button>
+                        <button color="warn" mat-fab>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button color="primary" mat-fab>
+                            <mat-icon>thumb_down</mat-icon>
+                        </button>
+                        <button mat-fab style="background-color: gold;">
+                            <mat-icon>local_fire_department</mat-icon>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
     </mat-tab-group>
-    
+
 </section>

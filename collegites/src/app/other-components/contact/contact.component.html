@@ -14,6 +14,7 @@
             <mat-label>Leave a Message</mat-label>
             <textarea style="height:100px" matInput placeholder="Your Message" ngModel name="message" required></textarea>
         </mat-form-field>
+        <button color="primary" [disabled]="cf.invalid" mat-raised-button>Submit</button>
     </form>
 
 </section>

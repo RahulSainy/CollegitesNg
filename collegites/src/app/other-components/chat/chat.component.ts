@@ -9,7 +9,7 @@ import { Post } from './post.model';
 })
 export class ChatComponent implements OnInit {
   posts: Post[] = [
-    new Post('Post 1 Theseses','Some quick example text to build on the card title and make up the bulk of the card content','https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg'),
+    new Post('Post 1 Theseses','Some quick example text to build on the card title and make up the bulk of the card content Some quick example text to build on the card title and make up the bulk of the card content Some quick example text to build on the card title and make up the bulk of the card content Some quick example text to build on the card title and make up the bulk of the card content Some quick example text to build on the card title and make up the bulk of the card contentSome quick example text to build on the card title and make up the bulk of the card content Some quick example text to build on the card title and make up the bulk of the card content','https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg'),
     new Post('Post 1 Theseses','Some quick example text to build on the card title and make up the bulk of the card content','https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'),
   
   ];
