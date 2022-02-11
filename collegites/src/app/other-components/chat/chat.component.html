@@ -52,75 +52,77 @@
     <mat-tab-group  mat-stretch-tabs backgroundColor="primary">
 
             <mat-tab label="All">
-                <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let card of cards">
-
+                <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                     <mat-card class="post-card">
-                        <mat-card-title>{{card.title}}</mat-card-title>
-                        <mat-card-subtitle>{{card.description}}</mat-card-subtitle>
-                        <img mat-card-image [src]="card.img" alt="">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                        <img mat-card-image [src]="post.img" alt="">
                         <mat-card-actions fxLayoutAlign="space-around ">
-                            <button style="width: 100%;" color="primary" mat-raised-button>SHARE</button>
-                            <button style="width: 100%;" color="accent" mat-raised-button>LIKE</button>
+                            <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
+                            <button  color="accent" mat-fab> <mat-icon>favorite</mat-icon></button>
+                            <button  color="accent" mat-fab> <mat-icon>thumb_up</mat-icon></button>
+                            <button mat-fab><img src="https://img.icons8.com/fluency/48/000000/applause.png"/></button>
+
                         </mat-card-actions>
                     </mat-card>
                 </div>
             <br>
         </mat-tab>
         <mat-tab label="Confession">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let card of cards">
+            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
 
                 <mat-card class="post-card">
-                    <mat-card-title>{{card.title}}</mat-card-title>
-                    <mat-card-subtitle>{{card.description}}</mat-card-subtitle>
-                    <img mat-card-image [src]="card.img" alt="">
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE</button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE</button>
+                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
+                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE <mat-icon>favorite</mat-icon></button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
         <mat-tab label="Marketing">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let card of cards">
+            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
 
                 <mat-card class="post-card">
-                    <mat-card-title>{{card.title}}</mat-card-title>
-                    <mat-card-subtitle>{{card.description}}</mat-card-subtitle>
-                    <img mat-card-image [src]="card.img" alt="">
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE</button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE</button>
+                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
+                        <button style="width: 100%;" color="accent" mat-raised-button> LIKE <mat-icon>favorite</mat-icon></button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
         <mat-tab label="Meme">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let card of cards">
+            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
 
                 <mat-card class="post-card">
-                    <mat-card-title>{{card.title}}</mat-card-title>
-                    <mat-card-subtitle>{{card.description}}</mat-card-subtitle>
-                    <img mat-card-image [src]="card.img" alt="">
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE</button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE</button>
+                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
+                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE <mat-icon>favorite</mat-icon></button>
                     </mat-card-actions>
                 </mat-card>
             </div>
             <br>
         </mat-tab>
         <mat-tab label="Other">
-            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let card of cards">
+            <div fxLayout="row"  fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
 
                 <mat-card class="post-card">
-                    <mat-card-title>{{card.title}}</mat-card-title>
-                    <mat-card-subtitle>{{card.description}}</mat-card-subtitle>
-                    <img mat-card-image [src]="card.img" alt="">
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-around ">
-                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE</button>
-                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE</button>
+                        <button style="width: 100%;" color="primary" mat-raised-button>SHARE <mat-icon>share</mat-icon></button>
+                        <button style="width: 100%;" color="accent" mat-raised-button>LIKE <mat-icon>favorite</mat-icon></button>
                     </mat-card-actions>
                 </mat-card>
             </div>

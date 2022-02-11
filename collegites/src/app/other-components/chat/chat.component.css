@@ -13,8 +13,15 @@ img {
   flex-direction: column;
   align-items: center;
   align-items: stretch;
-  width: 90%;
+  width: 90%;    
 }
 button{
     height: 50px;
+}
+
+.mat-fab {
+  background-color: #008eff;
+}
+.mat-fab:hover img {
+  transform: scale(1.2);
 }
