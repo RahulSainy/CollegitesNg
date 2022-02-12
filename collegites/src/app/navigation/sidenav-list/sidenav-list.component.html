@@ -27,12 +27,6 @@
     <mat-list-item *ngIf="isAuth" mat-list-item routerLink="learning/subject/topic">
         <mat-icon matPrefix>menu_book</mat-icon><span class="nav-caption">Topic</span>
     </mat-list-item>
-    <mat-list-item mat-list-item routerLink="about">
-        <mat-icon matPrefix>groups</mat-icon><span class="nav-caption">About Us</span>
-    </mat-list-item>
-    <mat-list-item mat-list-item routerLink="contact">
-        <mat-icon matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span>
-    </mat-list-item>
     <mat-list-item mat-list-item routerLink="chat">
         <mat-icon matPrefix>forum</mat-icon><span class="nav-caption">Chat</span>
     </mat-list-item>
@@ -41,6 +35,12 @@
     </mat-list-item>
     <mat-list-item mat-list-item routerLink="blog">
         <mat-icon matPrefix>campaign</mat-icon><span class="nav-caption">Blog</span>
+    </mat-list-item>
+    <mat-list-item mat-list-item routerLink="about">
+        <mat-icon matPrefix>groups</mat-icon><span class="nav-caption">About Us</span>
+    </mat-list-item>
+    <mat-list-item mat-list-item routerLink="contact">
+        <mat-icon matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span>
     </mat-list-item>
     <mat-list-item *ngIf="isAuth">
         <button mat-icon-button (click)="onLogout()">

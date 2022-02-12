@@ -14,6 +14,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
     imports: [
         MatButtonModule,
@@ -30,7 +31,8 @@ import {MatTabsModule} from '@angular/material/tabs';
        MatGridListModule,
        MatSnackBarModule,
        MatProgressSpinnerModule,
-       MatTabsModule, 
+       MatTabsModule,
+       MatBadgeModule, 
 
     ],
     exports: [MatButtonModule,
@@ -48,6 +50,8 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatSnackBarModule,
         MatProgressSpinnerModule,
         MatTabsModule,
+        MatBadgeModule,
+        
     ]
 })
 export class MateririalModule {}

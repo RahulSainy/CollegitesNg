@@ -12,3 +12,6 @@ main {background-color: #28FFF5;
     background-repeat: no-repeat; */
     background-attachment: fixed;
     background-size: cover;}
+    .mat-badge-content {
+        background: inherit;
+    }

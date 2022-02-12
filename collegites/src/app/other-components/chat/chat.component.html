@@ -1,77 +1,76 @@
+<h1 style=" text-align: center;">Anonynus Chat</h1>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>New Post</mat-card-title>
+    </mat-card-header>
+
+    <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech" #cf="ngForm" (ngSubmit)="onSubmit(cf)">
+
+        <mat-form-field appearance="outline">
+            <mat-label>
+                <mat-icon>chat_bubble_outline</mat-icon> Enter a Message
+            </mat-label>
+            <textarea #msgInput style="height:100px" matInput placeholder="Your Message" [(ngModel)]="postDetails.msg"
+                name="message" required></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>
+                <mat-icon>list</mat-icon>Choose topic
+            </mat-label>
+            <mat-select #topicInput type="text" matInput ngModel name="topic" required [(ngModel)]="postDetails.topic">
+                <mat-option value="Confession">Confession</mat-option>
+                <mat-option value="marketing">Martketing</mat-option>
+                <mat-option value="marketing">Meme</mat-option>
+                <mat-option value="marketing">other</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div style="text-align:center">
+            <input #fileInput hidden="true" type="file" onclick="this.value=null" [(ngModel)]="postDetails.img"
+                (change)="fileInputChange($event)" />
+            <button matInput mat-flat-button color="primary" (click)="fileInput.click()">
+                <mat-icon>image</mat-icon> Upload Image
+            </button>
+
+
+            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+            <div><img [src]="url" *ngIf="url"></div>
+
+        </div>
+
+
+    </form>
+    <mat-card-actions fxLayoutAlign="space-around ">
+        <button style="width: 200px;" color="warn" mat-raised-button>Discard</button>
+        <button style="width: 200px;" color="primary" mat-raised-button (click)="add()">Post</button>
+    </mat-card-actions>
+</mat-card>
+
+
+<br>
+
 <section>
-
-    <h1 style=" text-align: center;">Anonynus Chat</h1>
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>New Post</mat-card-title>
-        </mat-card-header>
-
-        <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech" #cf="ngForm" (ngSubmit)="onSubmit(cf)">
-
-            <mat-form-field appearance="outline">
-                <mat-label>
-                    <mat-icon>chat_bubble_outline</mat-icon> Enter a Message
-                </mat-label>
-                <textarea style="height:100px" matInput placeholder="Your Message" ngModel name="message"
-                    required></textarea>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>
-                    <mat-icon>list</mat-icon>Choose topic
-                </mat-label>
-                <mat-select type="text" matInput ngModel name="topic" required>
-                    <mat-option value="Confession">Confession</mat-option>
-                    <mat-option value="marketing">Martketing</mat-option>
-                    <mat-option value="marketing">Meme</mat-option>
-                    <mat-option value="marketing">other</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <div style="text-align:center">
-                <input #fileInput hidden="true" type="file" onclick="this.value=null"
-                    (change)="fileInputChange($event)" />
-                <button matInput mat-flat-button color="primary" (click)="fileInput.click()">
-                    <mat-icon>image</mat-icon> Upload Image
-                </button>
-
-                <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-                <div><img [src]="url" *ngIf="url"></div>
-
-            </div>
-
-
-        </form>
-        <mat-card-actions fxLayoutAlign="space-around ">
-            <button style="width: 200px;" color="warn" mat-raised-button>Discard</button>
-            <button style="width: 200px;" color="primary" mat-raised-button>Post</button>
-        </mat-card-actions>
-    </mat-card>
-
-
-    <br>
-
-
     <mat-tab-group mat-stretch-tabs backgroundColor="primary">
 
         <mat-tab label="All">
-            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of postCollectiondata">
                 <mat-card class="post-card">
-                    <mat-card-title>{{post.title}}</mat-card-title>
-                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <mat-card-title>{{post.topic}}</mat-card-title>
+                    <mat-card-subtitle>{{post.msg}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-evenly ">
-                        <button style="background-color: #ff9c00;" mat-fab>
+                        <button matBadge="15" style="background-color: #ff9c00;" mat-fab>
                             <mat-icon>share</mat-icon>
                         </button>
-                        <button color="primary" mat-fab>
+                        <button matBadge="15" color="primary" mat-fab>
                             <mat-icon>thumb_up</mat-icon>
                         </button>
-                        <button color="warn" mat-fab>
+                        <button matBadge="15" color="warn" mat-fab>
                             <mat-icon>favorite</mat-icon>
                         </button>
-                        <button color="primary" mat-fab>
+                        <button matBadge="15" color="primary" mat-fab>
                             <mat-icon>thumb_down</mat-icon>
                         </button>
-                        <button mat-fab style="background-color: gold;">
+                        <button matBadge="15" mat-fab style="background-color: gold;">
                             <mat-icon>local_fire_department</mat-icon>
                         </button>
                     </mat-card-actions>
@@ -82,8 +81,8 @@
         <mat-tab label="Confession">
             <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
-                    <mat-card-title>{{post.title}}</mat-card-title>
-                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <mat-card-title>{{post.topic}</mat-card-title>
+                    <mat-card-subtitle>{{post.msg}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-evenly ">
                         <button style="background-color: #ff9c00;" mat-fab>
@@ -109,8 +108,8 @@
         <mat-tab label="Marketing">
             <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
-                    <mat-card-title>{{post.title}}</mat-card-title>
-                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <mat-card-title>{{post.topic}}</mat-card-title>
+                    <mat-card-subtitle>{{post.msg}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-evenly ">
                         <button style="background-color: #ff9c00;" mat-fab>
@@ -136,8 +135,8 @@
         <mat-tab label="Meme">
             <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
-                    <mat-card-title>{{post.title}}</mat-card-title>
-                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <mat-card-title>{{post.topic}}</mat-card-title>
+                    <mat-card-subtitle>{{post.msg}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-evenly ">
                         <button style="background-color: #ff9c00;" mat-fab>
@@ -163,8 +162,8 @@
         <mat-tab label="Other">
             <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of posts">
                 <mat-card class="post-card">
-                    <mat-card-title>{{post.title}}</mat-card-title>
-                    <mat-card-subtitle>{{post.desc}}</mat-card-subtitle>
+                    <mat-card-title>{{post.topic}}</mat-card-title>
+                    <mat-card-subtitle>{{post.msg}}</mat-card-subtitle>
                     <img mat-card-image [src]="post.img" alt="">
                     <mat-card-actions fxLayoutAlign="space-evenly ">
                         <button style="background-color: #ff9c00;" mat-fab>

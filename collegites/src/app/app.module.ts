@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 
@@ -22,12 +23,12 @@ import { AuthService } from './auth/auth.service'
 import { environment } from 'src/environments/environment'
 import { UIservice } from './Shared/ui.service'
 import { AuthModule } from './auth/auth.model'
-import { SharedModule } from './Shared/shared.module';
+import { SharedModule } from './Shared/shared.module'
 import { AboutComponent } from './other-components/about/about.component'
-import { ContactComponent } from './other-components/contact/contact.component';
-import { ChatComponent } from './other-components/chat/chat.component';
-import { CartComponent } from './Ecommerce/cart/cart.component';
-import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component';
+import { ContactComponent } from './other-components/contact/contact.component'
+import { ChatComponent } from './other-components/chat/chat.component'
+import { CartComponent } from './Ecommerce/cart/cart.component'
+import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
 import { BlogComponent } from './other-components/blog/blog.component'
 
 
@@ -42,12 +43,12 @@ import { BlogComponent } from './other-components/blog/blog.component'
     TopicComponent,
     NotesComponent,
     TermsComponent,
-AboutComponent,
-ContactComponent,
-ChatComponent,
-CartComponent,
-EcommerceHomeComponent,
-BlogComponent,
+    AboutComponent,
+    ContactComponent,
+    ChatComponent,
+    CartComponent,
+    EcommerceHomeComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,8 +60,9 @@ BlogComponent,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AuthModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [AuthService, UIservice],
   bootstrap: [AppComponent],

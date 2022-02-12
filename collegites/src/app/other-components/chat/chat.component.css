@@ -18,21 +18,11 @@ img {
   align-items: stretch;
   width: 90%;    
 }
-button{
-    height: 50px;
-}
 
-.mat-fab {
-  background-size: cover;
-  background-repeat: round
+.mat-badge-content {
+  color: white;
+  background: inherit;
 }
 .mat-fab:hover {
   transform: scale(1.2);
- transition-duration: 1s;
-}
-
-.mat-fab img{
-  object-fit: cover; /*this makes the image in src fit to the size specified below*/
-  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
-  height: 80%;
 }
