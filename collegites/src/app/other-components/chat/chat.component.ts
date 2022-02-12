@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NgForm } from '@angular/forms'
-import { AngularFireDatabase } from '@angular/fire/compat/database'
 
 import { DocumentData, QuerySnapshot } from '@firebase/firestore';
 import { ChatService } from './chat.service'
@@ -11,6 +11,7 @@ import { ChatService } from './chat.service'
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent implements OnInit {
+  
   posts: any
   postDetails = {
     topic: '',
@@ -24,7 +25,7 @@ export class ChatComponent implements OnInit {
         postNumber: string
         topic: string
         msg: string
-        img: string
+        img?: string
       }[]
     | any = []
   // posts: Post[] = [
@@ -36,7 +37,7 @@ export class ChatComponent implements OnInit {
   url: string | ArrayBuffer | null
 
 
-  constructor(private chatService: ChatService, db: AngularFireDatabase) {}
+  constructor(private chatService: ChatService,private afStorage: AngularFirestore) {}
 
   ngOnInit(): void {
     this.get()

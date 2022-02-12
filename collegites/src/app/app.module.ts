@@ -61,6 +61,7 @@ import { BlogComponent } from './other-components/blog/blog.component'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AuthModule,
     SharedModule,
   ],
