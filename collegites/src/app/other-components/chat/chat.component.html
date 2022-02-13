@@ -1,35 +1,6 @@
 <app-createpost>loading...</app-createpost>
 
 
-<!-- 
-<table *ngIf="postList">
-    <tr *ngFor="let post of postArray">
-      <td>
-        <div class="imagebox" *ngIf="post==0">
-          <a routerLink="/image/upload">
-            <img src="/assets/img/new_image.jpg" class="img-fluid">
-            <span class="imagebox-desc">Insert New Image</span></a>
-        </div>
-        <div class="imagebox" *ngIf="post!=0">
-          <img [src]="postList[post].imageUrl" class="img-fluid">
-          <span class="imagebox-desc">{{postList[post].caption}}</span>
-        </div>
-      </td>
-      <td *ngIf="postList[3*post]">
-        <div class="imagebox">
-          <img [src]="postList[3*post].imageUrl" class="img-fluid">
-          <span class="imagebox-desc">{{postList[3*post].caption}}</span>
-        </div>
-      </td>
-      <td *ngIf="postList[3*post+1]">
-        <div class="imagebox">
-          <img [src]="postList[3*post+1].imageUrl" class="img-fluid">
-          <span class="imagebox-desc">{{postList[3*post+1].caption}}</span>
-        </div>
-      </td>
-    </tr>
-  </table> -->
-
 <section>
     <mat-tab-group mat-stretch-tabs backgroundColor="primary">
         <mat-tab label="All">
@@ -43,7 +14,7 @@
                         <button matBadge="15" style="background-color: #ff9c00;" mat-fab>
                             <mat-icon>share</mat-icon>
                         </button>
-                        <button matBadge="15" color="primary" mat-fab>
+                        <button matBadge="15"  color="primary" mat-fab>
                             <mat-icon>thumb_up</mat-icon>
                         </button>
                         <button matBadge="15" color="warn" mat-fab>

@@ -33,6 +33,9 @@
     <mat-list-item mat-list-item routerLink="shop">
         <mat-icon class="shop-icon" matPrefix>local_mall</mat-icon><span class="nav-caption">Shop</span>
     </mat-list-item>
+    <mat-list-item mat-list-item routerLink="contact">
+        <mat-icon matPrefix class="shop-icon">sell</mat-icon><span class="nav-caption">Sell</span>
+    </mat-list-item>
     <mat-list-item mat-list-item routerLink="blog">
         <mat-icon matPrefix>campaign</mat-icon><span class="nav-caption">Blog</span>
     </mat-list-item>
@@ -40,8 +43,9 @@
         <mat-icon matPrefix>groups</mat-icon><span class="nav-caption">About Us</span>
     </mat-list-item>
     <mat-list-item mat-list-item routerLink="contact">
-        <mat-icon matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span>
+        <mat-icon  matPrefix>contacts</mat-icon><span class="nav-caption">Contact Us</span>
     </mat-list-item>
+
     <mat-list-item *ngIf="isAuth">
         <button mat-icon-button (click)="onLogout()">
             <mat-icon>eject</mat-icon><span>Logout</span>

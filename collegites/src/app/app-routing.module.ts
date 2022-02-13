@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { AuthGuard } from './auth/auth.guard'
 import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
+import { SellComponent } from './Ecommerce/sell/sell.component'
 import { HomeComponent } from './home/home.component'
 import { SubjectComponent } from './learning/subject/subject.component'
 import { TopicComponent } from './learning/topic/topic.component'
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'shop', component: EcommerceHomeComponent },
+  { path: 'sell', component: SellComponent },
+
   { path: 'blog', component: BlogComponent },
   {
     path: 'learning/subject',

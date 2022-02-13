@@ -30,7 +30,8 @@ import { ChatComponent } from './other-components/chat/chat.component'
 import { CartComponent } from './Ecommerce/cart/cart.component'
 import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
 import { BlogComponent } from './other-components/blog/blog.component'
-import { CreatePostComponent } from './other-components/chat/create-post/createpost.component'
+import { CreatePostComponent } from './other-components/chat/create-post/createpost.component';
+import { SellComponent } from './Ecommerce/sell/sell.component'
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { CreatePostComponent } from './other-components/chat/create-post/createp
     CartComponent,
     EcommerceHomeComponent,
     BlogComponent,
+    SellComponent,
   ],
   imports: [
     BrowserModule,
