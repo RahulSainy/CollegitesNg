@@ -1,14 +1,13 @@
-
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { finalize } from 'rxjs/operators'
-import { ImageService } from 'src/app/Shared/image.service'
 
 import { AngularFireStorage } from '@angular/fire/compat/storage'
+import { SellService } from './sell.service'
 @Component({
   selector: 'app-sell',
   templateUrl: './sell.component.html',
-  styleUrls: ['./sell.component.css']
+  styleUrls: ['./sell.component.css'],
 })
 export class SellComponent implements OnInit {
   imgSrc: string
@@ -16,18 +15,27 @@ export class SellComponent implements OnInit {
   isSubmitted: boolean
 
   formTemplate = new FormGroup({
-    msg: new FormControl('', Validators.required),
+    poductname: new FormControl('', Validators.required),
+
+    price: new FormControl('', Validators.required),
+    sellerName: new FormControl('', Validators.required),
+    Contact: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    socialMediaUrl: new FormControl('', Validators.required),
+
+    dsc: new FormControl('', Validators.required),
     category: new FormControl(''),
     imageUrl: new FormControl('', Validators.required),
   })
 
   constructor(
     private storage: AngularFireStorage,
-    private service: ImageService,
+    private service: SellService,
   ) {}
 
   ngOnInit() {
     this.resetForm()
+    this.service.getImageDetailList();
   }
 
   showPreview(event: any) {
@@ -56,13 +64,13 @@ export class SellComponent implements OnInit {
         .pipe(
           finalize(() => {
             fileRef.getDownloadURL().subscribe((url) => {
-              formValue['imageUrl'] = url;
-              this.service.insertImageDetails(formValue);
-              this.resetForm();
+              formValue['imageUrl'] = url
+              this.service.insertImageDetails(formValue)
+              this.resetForm()
             })
           }),
         )
-        .subscribe();
+        .subscribe()
     }
   }
 
@@ -74,12 +82,18 @@ export class SellComponent implements OnInit {
     this.formTemplate.reset()
     console.log('works')
     this.formTemplate.setValue({
-      msg: '',
+      poductname: '',
+      dsc: '',
       imageUrl: '',
       category: 'Other',
+      price: '',
+      sellerName: '',
+      Contact: '',
+      email: '',
+      socialMediaUrl: '',
     })
-    this.imgSrc = '/assets/img/image_placeholder.jpg';
-    this.selectedImage = null;
-    this.isSubmitted = false;
+    this.imgSrc = '/assets/img/image_placeholder.jpg'
+    this.selectedImage = null
+    this.isSubmitted = false
   }
 }

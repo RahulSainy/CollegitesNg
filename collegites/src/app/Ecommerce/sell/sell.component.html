@@ -1,25 +1,25 @@
-<section>
-  
+
 
 <h1 style=" text-align: center;">Sell Old Stationary</h1>
-<mat-card>
-   
-        <mat-card-title>Add Your Product</mat-card-title>
-
-
-    <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech"  [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+<section class="list-members" >
+    <mat-card class="member">
+        
+        
+        
+        <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech"  [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+        <mat-card-title style=" text-align: center;">Add Your Product</mat-card-title>
         <mat-form-field appearance="outline">
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon> Product Name
             </mat-label>
-            <input type="text" matInput placeholder="Product Name" formControlName="name"  required/>
+            <input type="text" matInput placeholder="Product Name" formControlName="poductname"  required/>
         </mat-form-field>
         
         <mat-form-field appearance="outline">
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon> Enter a Description
             </mat-label>
-            <textarea style="height:100px" matInput placeholder="Enter a Description" formControlName="msg"  required></textarea>
+            <textarea style="height:100px" matInput placeholder="Enter a Description" formControlName="dsc"  required></textarea>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>
@@ -44,7 +44,7 @@
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon> Your Price
             </mat-label>
-            <input type="text" matInput placeholder="Product Name" formControlName="name"  required/>
+            <input type="text" matInput placeholder="price" formControlName="price"  required/>
         </mat-form-field>
         <div style="text-align:center">
           <h1>Upload Image</h1>
@@ -63,25 +63,25 @@
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon> Your Name 
             </mat-label>
-            <input type="text" matInput placeholder="Product Name" formControlName="name"  required/>
+            <input type="text" matInput placeholder="sellerName" formControlName="sellerName"  required/>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon> Contact Number
             </mat-label>
-            <input type="text" matInput placeholder="Product Name" formControlName="name"  required/>
+            <input type="text" matInput placeholder="Contact" formControlName="Contact"  required/>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon>Email
             </mat-label>
-            <input type="text" matInput placeholder="Product Name" formControlName="name"  required/>
+            <input type="text" matInput placeholder="email" formControlName="email"  required/>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>
                 <mat-icon>chat_bubble_outline</mat-icon> Social Media Id
             </mat-label>
-            <input type="text" matInput placeholder="Product Name" formControlName="name"  required/>
+            <input type="text" matInput placeholder="Social Media Id" formControlName="socialMediaUrl"  required/>
         </mat-form-field>
     </div>
         
