@@ -1,0 +1,75 @@
+<!-- 
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+     
+        <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+
+     
+        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
+          (change)="showPreview($event)">
+        
+      
+        <input class="form-control" formControlName="caption" placeholder="Caption">
+        
+    
+        <select formControlName="category" class="form-control">
+          <option value="Animal">Animal</option>
+          <option value="Vehicle">Vehicle</option>
+          <option value="Bird">Bird</option>
+        </select>
+      
+      
+          <button type="submit" class="btn btn-success btn-block float-right">Submit</button>
+    
+    </form>
+   -->
+
+<section>
+  
+
+<h1 style=" text-align: center;">Anonynus Chat</h1>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>New Post</mat-card-title>
+    </mat-card-header>
+
+    <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech"  [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+
+        <mat-form-field appearance="outline">
+            <mat-label>
+                <mat-icon>chat_bubble_outline</mat-icon> Enter a Message
+            </mat-label>
+            <textarea style="height:100px" matInput placeholder="Your Message" formControlName="msg"  required></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>
+                <mat-icon>list</mat-icon>Choose topic
+            </mat-label>
+            <mat-select  matInput  required  formControlName="category">
+                <mat-option value="Confession">Confession</mat-option>
+                <mat-option value="Marketing">Martketing</mat-option>
+                <mat-option value="Meme">Meme</mat-option>
+                <mat-option value="Other">other</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div style="text-align:center">
+          
+        <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+            <input hidden="true" type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
+            (change)="showPreview($event)"  />
+
+        </div>
+        <div  fxLayout="row" fxLayoutAlign="space-between strech">
+
+          <button style="width: 200px;" color="warn" mat-raised-button type="button" onclick="resetForm()">Discard</button>
+          
+          <button style="width: 200px;" color="primary" mat-raised-button type="submit">Post</button>
+        </div>
+        
+     
+
+    </form>
+</mat-card>
+
+
+</section>
+<br>

@@ -1,78 +1,44 @@
-<!-- <input type="file" (change)="upload($event)" accept=".png,.jpg" /> -->
+<app-createpost>loading...</app-createpost>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 style=" text-align: center;">Anonynus Chat</h1>
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>New Post</mat-card-title>
-    </mat-card-header>
-
-    <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center strech" #cf="ngForm" (ngSubmit)="onSubmit(cf)">
-
-        <mat-form-field appearance="outline">
-            <mat-label>
-                <mat-icon>chat_bubble_outline</mat-icon> Enter a Message
-            </mat-label>
-            <textarea #msgInput style="height:100px" matInput placeholder="Your Message" [(ngModel)]="postDetails.msg"
-                name="message" required></textarea>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>
-                <mat-icon>list</mat-icon>Choose topic
-            </mat-label>
-            <mat-select #topicInput type="text" matInput ngModel name="topic" required [(ngModel)]="postDetails.topic">
-                <mat-option value="Confession">Confession</mat-option>
-                <mat-option value="marketing">Martketing</mat-option>
-                <mat-option value="marketing">Meme</mat-option>
-                <mat-option value="marketing">other</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div style="text-align:center">
-            <input #fileInput hidden="true" type="file" onclick="this.value=null" [(ngModel)]="postDetails.img"
-                (change)="fileInputChange($event)" />
-            <button matInput mat-flat-button color="primary" (click)="fileInput.click()">
-                <mat-icon>image</mat-icon> Upload Image
-            </button>
-
-
-            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-            <div><img [src]="url" *ngIf="url"></div>
-
+<!-- 
+<table *ngIf="postList">
+    <tr *ngFor="let post of postArray">
+      <td>
+        <div class="imagebox" *ngIf="post==0">
+          <a routerLink="/image/upload">
+            <img src="/assets/img/new_image.jpg" class="img-fluid">
+            <span class="imagebox-desc">Insert New Image</span></a>
         </div>
-
-
-    </form>
-    <mat-card-actions fxLayoutAlign="space-around ">
-        <button style="width: 200px;" color="warn" mat-raised-button>Discard</button>
-        <button style="width: 200px;" color="primary" mat-raised-button (click)="add()">Post</button>
-    </mat-card-actions>
-</mat-card>
-
-
-<br>
+        <div class="imagebox" *ngIf="post!=0">
+          <img [src]="postList[post].imageUrl" class="img-fluid">
+          <span class="imagebox-desc">{{postList[post].caption}}</span>
+        </div>
+      </td>
+      <td *ngIf="postList[3*post]">
+        <div class="imagebox">
+          <img [src]="postList[3*post].imageUrl" class="img-fluid">
+          <span class="imagebox-desc">{{postList[3*post].caption}}</span>
+        </div>
+      </td>
+      <td *ngIf="postList[3*post+1]">
+        <div class="imagebox">
+          <img [src]="postList[3*post+1].imageUrl" class="img-fluid">
+          <span class="imagebox-desc">{{postList[3*post+1].caption}}</span>
+        </div>
+      </td>
+    </tr>
+  </table> -->
 
 <section>
     <mat-tab-group mat-stretch-tabs backgroundColor="primary">
-
         <mat-tab label="All">
-            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of postCollectiondata">
+            <div fxLayout="row" fxLayoutAlign="center" class="tab-card" *ngFor="let post of postArray">
+                
                 <mat-card class="post-card">
-                    <mat-card-title>{{post.topic}}</mat-card-title>
-                    <mat-card-subtitle>{{post.msg}}</mat-card-subtitle>
-                    <img mat-card-image [src]="post.img" alt="">
+                    <mat-card-title>{{postList[post].category}}</mat-card-title>
+                    <mat-card-subtitle>{{postList[post].msg}}</mat-card-subtitle>
+                    <img mat-card-image [src]="postList[post].imageUrl">
                     <mat-card-actions fxLayoutAlign="space-evenly ">
                         <button matBadge="15" style="background-color: #ff9c00;" mat-fab>
                             <mat-icon>share</mat-icon>

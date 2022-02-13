@@ -11,7 +11,7 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MateririalModule } from './material.module'
 import { HomeComponent } from './home/home.component'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HeaderComponent } from './navigation/header/header.component'
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component'
 import { FooterComponent } from './navigation/footer/footer.component'
@@ -30,6 +30,7 @@ import { ChatComponent } from './other-components/chat/chat.component'
 import { CartComponent } from './Ecommerce/cart/cart.component'
 import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
 import { BlogComponent } from './other-components/blog/blog.component'
+import { CreatePostComponent } from './other-components/chat/create-post/createpost.component'
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { BlogComponent } from './other-components/blog/blog.component'
     AboutComponent,
     ContactComponent,
     ChatComponent,
+    CreatePostComponent,
     CartComponent,
     EcommerceHomeComponent,
     BlogComponent,
@@ -58,6 +60,7 @@ import { BlogComponent } from './other-components/blog/blog.component'
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
