@@ -10,8 +10,9 @@ export class ImageService {
   constructor(private firebase: AngularFireDatabase) { }
 
   getImageDetailList() {
-    this.imageDetailList = this.firebase.list('postsDetails', ref => ref.orderByChild("img"));
+    this.imageDetailList = this.firebase.list('postsDetails', ref => ref.orderByChild("catergory"));
   }
+
 
   insertImageDetails(imageDetails: any) {
     this.imageDetailList.push(imageDetails);

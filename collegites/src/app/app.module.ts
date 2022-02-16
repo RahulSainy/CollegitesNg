@@ -32,6 +32,12 @@ import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-hom
 import { BlogComponent } from './other-components/blog/blog.component'
 import { CreatePostComponent } from './other-components/chat/create-post/createpost.component';
 import { SellComponent } from './Ecommerce/sell/sell.component'
+import { CheckoutComponent } from './Ecommerce/checkout/checkout.component';
+import { OrderSuccessComponent } from './Ecommerce/order-success/order-success.component';
+import { MyOrdersComponent } from './Ecommerce/my-orders/my-orders.component';
+import { AdminProductsComponent } from './Ecommerce/admin-products/admin-products.component';
+import { AdminOrdersComponent } from './Ecommerce/admin-orders/admin-orders.component';
+import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component'
 
 
 @NgModule({
@@ -53,6 +59,12 @@ import { SellComponent } from './Ecommerce/sell/sell.component'
     EcommerceHomeComponent,
     BlogComponent,
     SellComponent,
+    CheckoutComponent,
+    OrderSuccessComponent,
+    MyOrdersComponent,
+    AdminProductsComponent,
+    AdminOrdersComponent,
+    EcommerceLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +72,6 @@ import { SellComponent } from './Ecommerce/sell/sell.component'
     BrowserAnimationsModule,
     MateririalModule,
     AppRoutingModule,
-    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),

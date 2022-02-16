@@ -128,7 +128,7 @@ div {
 .temp {
   background: #95e5ff36;
   color: black;
-  margin-right: 10px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
