@@ -1,1 +1,15 @@
-<p>ecommerce-home works!</p>
+<mat-toolbar fxLayoutGap="10px">
+   <button mat-raised-button routerLink="/ecommerce-cart">
+    Cart<mat-icon>shopping_cart</mat-icon>
+   </button>
+   <button  mat-raised-button routerLink="/ecommerce-login">
+    login<mat-icon>login</mat-icon>
+   </button>
+   <button  mat-raised-button  [matMenuTriggerFor]="menu">Username</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/ecommerce-myorders">My Orders</button>
+  <button mat-menu-item routerLink="/admin/orders">Manage Orders</button>
+  <button mat-menu-item routerLink="/admin/products">Manage Products</button>
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>
+ </mat-toolbar>
