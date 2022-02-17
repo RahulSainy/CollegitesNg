@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/database';
+import { EcommerceAuthService } from '../ecommerce-auth.service';
 // import * as firebase from 'firebase/compat';
 @Component({
   selector: 'app-ecommerce-login',
@@ -10,11 +7,11 @@ import 'firebase/compat/database';
   styleUrls: ['./ecommerce-login.component.css'],
 })
 export class EcommerceLoginComponent implements OnInit {
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor(private auth: EcommerceAuthService ) {}
 
   ngOnInit(): void {}
 
   login() {
-    this.afAuth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+this.auth.login()
   }
 }

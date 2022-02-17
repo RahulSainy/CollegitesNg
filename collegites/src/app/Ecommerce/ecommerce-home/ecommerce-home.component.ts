@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { EcommerceUserServiceService } from '../ecommerce-user-service.service';
+import { Router } from '@angular/router';
+import { EcommerceAuthService } from '../ecommerce-auth.service';
 
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/database';
 @Component({
   selector: 'app-ecommerce-home',
   templateUrl: './ecommerce-home.component.html',
   styleUrls: ['./ecommerce-home.component.css']
 })
 export class EcommerceHomeComponent {
- user:firebase.User
-  constructor(private afAuth:AngularFireAuth) { 
-    afAuth.authState.subscribe(user=> user =user)
-  }
-
-  logout(){
-this.afAuth.signOut();
+  constructor(private userService: EcommerceUserServiceService, private auth: EcommerceAuthService, router:Router) {
+    auth.user$.subscribe(user => {
+      if(user){
+        userService.save(user);
+  //       let returnUrl = localStorage.getItem('returnUrl');  
+  //       if (returnUrl) { // i.e, not null and not empty string 
+  //         // now returnUrl cannot be null, so it must be a string, which is valid to use in this call
+  //         router.navigateByUrl(returnUrl);
+  //     }
+      }
+    }); 
   }
 }

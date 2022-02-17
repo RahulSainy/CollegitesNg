@@ -5,6 +5,8 @@ import { AdminOrdersComponent } from './Ecommerce/admin-orders/admin-orders.comp
 import { AdminProductsComponent } from './Ecommerce/admin-products/admin-products.component';
 import { CartComponent } from './Ecommerce/cart/cart.component';
 import { CheckoutComponent } from './Ecommerce/checkout/checkout.component';
+import { EcommerceAdminAuthGuardService } from './Ecommerce/ecommerce-admin-auth-guard.service';
+import { EcommerceAuthGuardService } from './Ecommerce/ecommerce-auth-guard.service';
 import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component';
 import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component';
 import { MyOrdersComponent } from './Ecommerce/my-orders/my-orders.component';
@@ -40,13 +42,11 @@ const routes: Routes = [
   },
   { path: 'ecommerce-login', component: EcommerceLoginComponent },
   { path: 'ecommerce-cart', component: CartComponent },
-  { path: 'admin/orders', component: AdminOrdersComponent },
-
-  { path: 'admin/products', component: AdminProductsComponent },
-
-  { path: 'ecommerce-checkout', component: CheckoutComponent },
-  { path: 'ecommerce-myorders', component: MyOrdersComponent },
-  { path: 'ecommerce-ordersuccess', component: OrderSuccessComponent },
+  { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [EcommerceAuthGuardService, EcommerceAdminAuthGuardService]},
+  { path: 'admin/products', component: AdminProductsComponent, canActivate: [EcommerceAuthGuardService,EcommerceAdminAuthGuardService]},
+  { path: 'ecommerce-checkout', component: CheckoutComponent, canActivate: [EcommerceAuthGuardService] },
+  { path: 'ecommerce-myorders', component: MyOrdersComponent,  canActivate: [EcommerceAuthGuardService]},
+  { path: 'ecommerce-ordersuccess', component: OrderSuccessComponent ,  canActivate: [EcommerceAuthGuardService]},
 
 
 ];

@@ -37,7 +37,12 @@ import { OrderSuccessComponent } from './Ecommerce/order-success/order-success.c
 import { MyOrdersComponent } from './Ecommerce/my-orders/my-orders.component';
 import { AdminProductsComponent } from './Ecommerce/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './Ecommerce/admin-orders/admin-orders.component';
-import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component'
+import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component';
+import { EcommerceNavComponent } from './Ecommerce/ecommerce-nav/ecommerce-nav.component'
+import { EcommerceAuthService } from './Ecommerce/ecommerce-auth.service'
+import { EcommerceAuthGuardService } from './Ecommerce/ecommerce-auth-guard.service'
+import { EcommerceUserServiceService } from './Ecommerce/ecommerce-user-service.service'
+import { EcommerceAdminAuthGuardService } from './Ecommerce/ecommerce-admin-auth-guard.service'
 
 
 @NgModule({
@@ -65,6 +70,7 @@ import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-l
     AdminProductsComponent,
     AdminOrdersComponent,
     EcommerceLoginComponent,
+    EcommerceNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +87,7 @@ import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-l
     AuthModule,
     SharedModule,
   ],
-  providers: [AuthService, UIservice],
+  providers: [AuthService, UIservice,EcommerceAuthService,EcommerceAuthGuardService,EcommerceUserServiceService,EcommerceAdminAuthGuardService],
   bootstrap: [AppComponent],
   entryComponents: [TermsComponent],
 })
