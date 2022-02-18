@@ -25,7 +25,7 @@ export class EcommerceAuthService {
   }
 
   login() {
-    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/ecommerce';
     localStorage.setItem('returnUrl', returnUrl);
     // tslint:disable-next-line:max-line-length
     // before sending the user to google we want to store the return url in local storage; if we have the returnUrl parameter we're going to use that, otherwise we're going to use the route of our website

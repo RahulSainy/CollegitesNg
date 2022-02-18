@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
-import { AdminOrdersComponent } from './Ecommerce/admin-orders/admin-orders.component';
-import { AdminProductsComponent } from './Ecommerce/admin-products/admin-products.component';
+import { AdminOrdersComponent } from './Ecommerce/admin/components/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './Ecommerce/admin/components/admin-products/admin-products.component';
 import { CartComponent } from './Ecommerce/cart/cart.component';
 import { CheckoutComponent } from './Ecommerce/checkout/checkout.component';
-import { EcommerceAdminAuthGuardService } from './Ecommerce/ecommerce-admin-auth-guard.service';
+import { EcommerceAdminAuthGuardService } from './Ecommerce/admin/services/ecommerce-admin-auth-guard.service';
 import { EcommerceAuthGuardService } from './Ecommerce/ecommerce-auth-guard.service';
 import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component';
 import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component';

@@ -18,6 +18,7 @@ export class EcommerceNavComponent implements OnInit {
 
   }
   logout(){
+    console.log("workerd");
     this.authService.logout(); 
   }
 

@@ -35,14 +35,15 @@ import { SellComponent } from './Ecommerce/sell/sell.component'
 import { CheckoutComponent } from './Ecommerce/checkout/checkout.component';
 import { OrderSuccessComponent } from './Ecommerce/order-success/order-success.component';
 import { MyOrdersComponent } from './Ecommerce/my-orders/my-orders.component';
-import { AdminProductsComponent } from './Ecommerce/admin-products/admin-products.component';
-import { AdminOrdersComponent } from './Ecommerce/admin-orders/admin-orders.component';
+import { AdminOrdersComponent } from './Ecommerce/admin/components/admin-orders/admin-orders.component';
 import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component';
 import { EcommerceNavComponent } from './Ecommerce/ecommerce-nav/ecommerce-nav.component'
 import { EcommerceAuthService } from './Ecommerce/ecommerce-auth.service'
 import { EcommerceAuthGuardService } from './Ecommerce/ecommerce-auth-guard.service'
 import { EcommerceUserServiceService } from './Ecommerce/ecommerce-user-service.service'
-import { EcommerceAdminAuthGuardService } from './Ecommerce/ecommerce-admin-auth-guard.service'
+import { EcommerceAdminAuthGuardService } from './Ecommerce/admin/services/ecommerce-admin-auth-guard.service'
+import { AdminProductsComponent } from './Ecommerce/admin/components/admin-products/admin-products.component';
+import { ProductFormComponent } from './Ecommerce/admin/components/product-form/product-form.component'
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { EcommerceAdminAuthGuardService } from './Ecommerce/ecommerce-admin-auth
     AdminOrdersComponent,
     EcommerceLoginComponent,
     EcommerceNavComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,

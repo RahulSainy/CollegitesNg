@@ -21,15 +21,5 @@ export class EcommerceHomeComponent {
       }
     });
    
-  //   auth.user$.subscribe(user => {
-  //     if(user){
-  //       userService.save(user);
-  // //       let returnUrl = localStorage.getItem('returnUrl');  
-  // //       if (returnUrl) { // i.e, not null and not empty string 
-  // //         // now returnUrl cannot be null, so it must be a string, which is valid to use in this call
-  // //         router.navigateByUrl(returnUrl);
-  // //     }
-  //     }
-  //   }); 
   }
 }
