@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EcommerceAuthService } from '../../ecommerce-auth.service';
+import { EcommerceAuthService } from '../../shared/services/ecommerce-auth.service';
 import {map} from 'rxjs/operators';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';

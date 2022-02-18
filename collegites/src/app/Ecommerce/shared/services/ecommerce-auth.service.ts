@@ -7,7 +7,7 @@ import 'firebase/compat/database'
 
 import { from, Observable, switchMap } from 'rxjs'
 import { EcommerceUserServiceService } from './ecommerce-user-service.service'
-import { AppUser } from './Models/Ecommerce-user'
+import { AppUser } from '../Models/Ecommerce-user'
 @Injectable({
   providedIn: 'root',
 })

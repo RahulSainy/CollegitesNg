@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EcommerceAuthService } from '../ecommerce-auth.service';
+import { EcommerceAuthService } from '../shared/services/ecommerce-auth.service';
 // import * as firebase from 'firebase/compat';
 @Component({
   selector: 'app-ecommerce-login',

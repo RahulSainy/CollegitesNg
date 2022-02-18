@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { EcommerceUserServiceService } from '../ecommerce-user-service.service';
+import { EcommerceUserServiceService } from '../shared/services/ecommerce-user-service.service';
 import { Router } from '@angular/router';
-import { EcommerceAuthService } from '../ecommerce-auth.service';
+import { EcommerceAuthService } from '../shared/services/ecommerce-auth.service';
 
 @Component({
   selector: 'app-ecommerce-home',

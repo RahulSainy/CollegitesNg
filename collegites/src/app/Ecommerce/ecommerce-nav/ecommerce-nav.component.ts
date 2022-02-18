@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EcommerceAuthService } from '../ecommerce-auth.service';
-import { AppUser } from '../Models/Ecommerce-user';
+import { EcommerceAuthService } from '../shared/services/ecommerce-auth.service';
+import { AppUser } from '../shared/Models/Ecommerce-user';
 
 @Component({
   selector: 'app-ecommerce-nav',
