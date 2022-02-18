@@ -9,15 +9,15 @@ import { EcommerceAuthService } from './ecommerce-auth.service';
 export class EcommerceAuthGuardService implements CanActivate{
 
   constructor(private auth: EcommerceAuthService, private router:Router) { } 
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.auth.user$
+      .pipe(map(user => {
+         if(user) { return true; }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):any {
-    return this.auth.user$.pipe(map (
-      user => {
-     if ( user ) return true;
+        this.router.navigate(['/ecommerce-login'], { queryParams: { returnUrl: state.url }});
+        return false;
+    }));
+  }
 
-     this.router.navigate(['/ecommerce-login'], {queryParams:{returnUrl:state.url}});
-     return false;
-   }
-   ));
- }
+
 }
