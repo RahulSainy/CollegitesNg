@@ -27,24 +27,26 @@ import { SharedModule } from './Shared/shared.module'
 import { AboutComponent } from './other-components/about/about.component'
 import { ContactComponent } from './other-components/contact/contact.component'
 import { ChatComponent } from './other-components/chat/chat.component'
-import { CartComponent } from './Ecommerce/cart/cart.component'
-import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
+// import { CartComponent } from './Ecommerce/cart/cart.component'
+// import { EcommerceHomeComponent } from './Ecommerce/ecommerce-home/ecommerce-home.component'
 import { BlogComponent } from './other-components/blog/blog.component'
 import { CreatePostComponent } from './other-components/chat/create-post/createpost.component'
-import { SellComponent } from './Ecommerce/sell/sell.component'
-import { CheckoutComponent } from './Ecommerce/checkout/checkout.component'
-import { OrderSuccessComponent } from './Ecommerce/order-success/order-success.component'
-import { MyOrdersComponent } from './Ecommerce/my-orders/my-orders.component'
-import { AdminOrdersComponent } from './Ecommerce/admin/components/admin-orders/admin-orders.component'
-import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component'
-import { EcommerceNavComponent } from './Ecommerce/ecommerce-nav/ecommerce-nav.component'
-import { EcommerceAuthService } from './Ecommerce/shared/services/ecommerce-auth.service'
-import { EcommerceAuthGuardService } from './Ecommerce/shared/services/ecommerce-auth-guard.service'
-import { EcommerceUserServiceService } from './Ecommerce/shared/services/ecommerce-user-service.service'
-import { EcommerceAdminAuthGuardService } from './Ecommerce/admin/services/ecommerce-admin-auth-guard.service'
-import { AdminProductsComponent } from './Ecommerce/admin/components/admin-products/admin-products.component'
-import { ProductFormComponent } from './Ecommerce/admin/components/product-form/product-form.component'
-import { ProductCategoryService } from './Ecommerce/shared/services/product-category.service'
+import { ShopComponent } from './shop/shop.component'
+// import { SellComponent } from './Ecommerce/sell/sell.component'
+// import { CheckoutComponent } from './Ecommerce/checkout/checkout.component'
+// import { OrderSuccessComponent } from './Ecommerce/order-success/order-success.component'
+// import { MyOrdersComponent } from './Ecommerce/my-orders/my-orders.component'
+// import { AdminOrdersComponent } from './Ecommerce/admin/components/admin-orders/admin-orders.component'
+// import { EcommerceLoginComponent } from './Ecommerce/ecommerce-login/ecommerce-login.component'
+// import { EcommerceNavComponent } from './Ecommerce/ecommerce-nav/ecommerce-nav.component'
+// import { EcommerceAuthService } from './Ecommerce/shared/services/ecommerce-auth.service'
+// import { EcommerceAuthGuardService } from './Ecommerce/shared/services/ecommerce-auth-guard.service'
+// import { EcommerceUserServiceService } from './Ecommerce/shared/services/ecommerce-user-service.service'
+// import { EcommerceAdminAuthGuardService } from './Ecommerce/admin/services/ecommerce-admin-auth-guard.service'
+// import { AdminProductsComponent } from './Ecommerce/admin/components/admin-products/admin-products.component'
+// import { ProductFormComponent } from './Ecommerce/admin/components/product-form/product-form.component'
+// import { ProductCategoryService } from './Ecommerce/shared/services/product-category.service'
+// import { ProductServiceService } from './Ecommerce/admin/services/product-service.service'
 
 @NgModule({
   declarations: [
@@ -61,18 +63,19 @@ import { ProductCategoryService } from './Ecommerce/shared/services/product-cate
     ContactComponent,
     ChatComponent,
     CreatePostComponent,
-    CartComponent,
-    EcommerceHomeComponent,
-    BlogComponent,
-    SellComponent,
-    CheckoutComponent,
-    OrderSuccessComponent,
-    MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
-    EcommerceLoginComponent,
-    EcommerceNavComponent,
-    ProductFormComponent,
+    ShopComponent,
+    // CartComponent,
+    // EcommerceHomeComponent,
+    // BlogComponent,
+    // SellComponent,
+    // CheckoutComponent,
+    // OrderSuccessComponent,
+    // MyOrdersComponent,
+    // AdminProductsComponent,
+    // AdminOrdersComponent,
+    // EcommerceLoginComponent,
+    // EcommerceNavComponent,
+    // ProductFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,11 +95,13 @@ import { ProductCategoryService } from './Ecommerce/shared/services/product-cate
   providers: [
     AuthService,
     UIservice,
-    EcommerceAuthService,
-    EcommerceAuthGuardService,
-    EcommerceUserServiceService,
-    EcommerceAdminAuthGuardService,
-  ProductCategoryService],
+    // EcommerceAuthService,
+    // EcommerceAuthGuardService,
+    // EcommerceUserServiceService,
+    // EcommerceAdminAuthGuardService,
+//   ProductCategoryService,
+// ProductServiceService
+],
   bootstrap: [AppComponent],
   entryComponents: [TermsComponent],
 })
