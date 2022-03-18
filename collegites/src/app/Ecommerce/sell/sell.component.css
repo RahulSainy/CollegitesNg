@@ -1,0 +1,25 @@
+.list-members {
+    background: #dddddd5c;
+    width: 80%;
+    margin: 4% auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .member {
+    flex-basis: 90%;
+    align-items: center;
+  }
+  @media screen and (max-width: 770px) {
+      mat-card{
+          padding: 0;
+      }
+    .list-members {
+      width: 100%;
+    }
+    .member {
+      flex-basis: 100%;
+      font-size: 14px;
+    }}

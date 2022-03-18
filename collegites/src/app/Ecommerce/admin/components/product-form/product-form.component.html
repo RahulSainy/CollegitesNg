@@ -1,0 +1,55 @@
+<section class="signup-form">
+    <div flex fxLayout.gt-md="row" >
+        
+        <div fxFlex.gt-md="50">
+
+        <form #pf="ngForm" (ngSubmit)="save(pf.value)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <mat-form-field appearance="outline" >
+        <mat-label for="title">Title</mat-label>
+        <input #title="ngModel" [(ngModel)]="product.title"  matInput type="text" id="title"  name="title" required>
+        <mat-error *ngIf="title.touched && title.invalid">Title required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+       <mat-icon matPrefix>currency_rupee</mat-icon>
+       <mat-label for="price">Price</mat-label>
+        <input #price="ngModel"  [(ngModel)]="product.price"  matInput type="number" id="price"  min="0"  name="price" required>
+   <mat-error *ngIf="price.touched && price.invalid && !(price.hasError('min'))">Set Price</mat-error>
+   <mat-error *ngIf="price.touched && price.hasError('min')">
+    The value is lower than the minimum
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+       
+        <mat-label for="category">Category</mat-label>
+        <mat-label>Category</mat-label>
+        <mat-hint>Choose Category</mat-hint>
+        <mat-error *ngIf="category.touched && category.invalid">Choose Category</mat-error>
+        <mat-select #category="ngModel" [(ngModel)]="product.category"  name="category" id="category" class="form-control" required>
+            <mat-option *ngFor="let c of categories$ | async" [value]="category">
+              <!-- {{ category | json }} -->
+              {{ c.name }}
+            </mat-option>
+            <!-- every object in firebase has this property $key which is the unique identifier for that object, in this case that $key is bread, dairy, fruits - the values with lower case -->
+        </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label for="imageUrl">Image Url</mat-label>
+        <mat-error *ngIf="imageUrl.touched && imageUrl.invalid ">Url Required</mat-error>
+        <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl" matInput type="text" id="imageUrl"  name="imageUrld" required>
+    </mat-form-field>
+    <button mat-raised-button  [disabled]="!pf.valid">Save</button>
+    <button *ngIf="id" type="button" (click)="delete()" class="btn btn-danger">Delete</button>
+</form>
+</div>
+<div  fxFlex.gt-md="50">
+
+    <mat-card>
+        <img mat-card-image *ngIf="product.imageUrl" class="card-img-top" [src]="product.imageUrl" >
+        <mat-card-title>{{product.title}}</mat-card-title>
+        <mat-card-title> <mat-icon matPrefix>currency_rupee</mat-icon>{{product.price}}</mat-card-title>
+    </mat-card>
+</div>
+</div>
+</section>

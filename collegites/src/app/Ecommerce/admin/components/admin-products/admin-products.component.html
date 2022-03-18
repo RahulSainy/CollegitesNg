@@ -1,0 +1,30 @@
+<div class="container">
+    <button mat-raised-button color="warn" routerLink="/admin/products/new">
+        Add A New Product
+    </button>
+</div>
+<div class="container">
+    <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>Filter</mat-label>
+        <input matInput #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search...">
+    </mat-form-field>
+    <table class="rwd-table">
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Edit</th>
+            </tr>
+
+            <tr *ngFor="let item of filteredProducts">
+                <td data-th="Title">{{ item.title }}</td>
+                <td data-th="Price">{{ item.price }}</td>
+                <td data-th="Edit">
+                  <a [routerLink]="['/admin/products', item.$key]">Edit</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
